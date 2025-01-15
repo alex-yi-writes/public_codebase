@@ -3,6 +3,9 @@ import tkinter as tk
 from tkinter import simpledialog
 import sys
 
+## yeo-jin's solution to fixation cross presentation at 7T connectome
+# 15-01-2025: created & compiled
+
 def main():
     # a tkinter dialogue box for user input
     root = tk.Tk()
