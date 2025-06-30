@@ -9,7 +9,7 @@ set -euo pipefail
 
 # prep
 VERSION="7.4.1" # change here if you need to roll back or use some other versions
-TARBALL="freesurfer-Linux-centos6_x86_64-stable-pub-v${VERSION}.tar.gz"
+TARBALL="freesurfer-linux-centos7_x86_64-${VERSION}.tar.gz"
 URL="https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/${VERSION}/${TARBALL}"
 INSTALL_BASE="${HOME}"
 INSTALL_DIR="${INSTALL_BASE}/freesurfer-${VERSION}"
@@ -20,7 +20,7 @@ mkdir -p "${INSTALL_BASE}"
 
 # check if it's already there
 if [ ! -f "${INSTALL_BASE}/${TARBALL}" ]; then
-  wget -c "${URL}" -O "${INSTALL_BASE}/${TARBALL}"
+  curl -L --fail --output "${INSTALL_BASE}/${TARBALL}" "${URL}"
 fi
 
 # decomp
